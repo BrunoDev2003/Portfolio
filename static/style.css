@@ -83,3 +83,7 @@ section#inicio {
     width: 100%;
     height: 100vh;
 }
+
+section#inicio h2 {
+    font-size: 6rem;
+}
