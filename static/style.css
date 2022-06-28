@@ -86,4 +86,23 @@ section#inicio {
 
 section#inicio h2 {
     font-size: 6rem;
+    margin-left: 8rem;
+}
+
+section#inicio span#subtitle {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.text-shadow {
+    text-shadow:4px 4px 10px #000000;
+}
+
+section#inicio div#arraste {
+    width: 10rem;
+}
+
+section#inicio div#arraste a {
+    text-decoration: none;
+    color: #ffffff;
 }
