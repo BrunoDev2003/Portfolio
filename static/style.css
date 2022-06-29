@@ -151,3 +151,20 @@ i.menu-mobile {
         margin-left: 0;
     }
 }
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    width: 12px;
+    box-shadow: 4rem #000;
+    background-color: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #026464;
+    border-radius: 50%;
+}
+
+
