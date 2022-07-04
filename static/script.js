@@ -9,3 +9,5 @@ menuMobile.addEventListener('click', () => {
     : menuMobile.classList.remove("bi-x", "bi-list")
     body.classList.toggle("menu-nav-active");
 });
+
+const navItem = document.querySelectorAll('.nav-item');
