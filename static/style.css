@@ -171,4 +171,47 @@ i.menu-mobile {
     background-color: rgba(233, 248, 238, 0.938);
 }
 
+.cv .cv-title {
+    font-weight: 700px;
+    margin-top: 20px;
+    border-left: 2px solid rgb(0, 240, 180);
+    position: relative;
+}
+
+.cv .cv-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid rgb(0, 240, 180);
+    position: relative;
+}
+
+.cv .cv-item h4 {
+    line-height: 18px;
+    font-weight:600 ;
+    text-transform: uppercase;
+    font-family: "Ubuntu", sans-serif;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.cv .cv-item h5 {
+    background:rgb(0, 240, 180);
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.cv .cv-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -9px;
+    height: 16px;
+    width: 16px;
+    border: 2px solid rgb(0, 240, 180);
+    background: #fff;
+    border-radius: 50%;
+}
+
 
