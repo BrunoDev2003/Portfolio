@@ -249,6 +249,7 @@ i.menu-mobile {
 
 
 @media (max-width: 1860px) {
+    
     .carousel-control-prev{
         margin-left: 0;
     }
