@@ -11,7 +11,7 @@ html,body{
     top:0;
     left: 0;
     bottom: 0;
-    background:#026464;
+    background:#022164;
     overflow-y: auto;
     width:280px;
     transition: all ease-in-out 0.5s;
@@ -110,7 +110,7 @@ section#inicio div#arraste a {
 i.menu-mobile {
     position:fixed;
     color: #ffffff;
-    background-color: rgba(1, 133, 1, 0.911);
+    background-color: rgba(1, 36, 133, 0.911);
     right: 1rem;
     top: 1rem;
     font-size: 1.5rem;
@@ -195,7 +195,7 @@ i.menu-mobile {
 }
 
 .cv .cv-item h5 {
-    background:rgb(0, 240, 180);
+    background:rgb(0, 39, 167);
     padding: 5px 15px;
     display: inline-block;
     font-weight: 600;
@@ -209,7 +209,7 @@ i.menu-mobile {
     left: -9px;
     height: 16px;
     width: 16px;
-    border: 2px solid rgb(0, 240, 180);
+    border: 2px solid rgb(0, 44, 240);
     background: #fff;
     border-radius: 50%;
 }
