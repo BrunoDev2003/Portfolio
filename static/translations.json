@@ -12,6 +12,9 @@
     "about-description": "description",
     "description": "I believe in the potential that technology has to help and change people's lives, passionate about the world of technology, i enjoy solving problemas, and facing new challanges, always in constant learning and looking for professional and personal development.",
     "col-md-8_h3": "Software Developer",
-    "col-md-8_p": "Information Systems student - UNIPAR - Umuarama"
+    "col-md-8_p": "Information Systems student - UNIPAR - Umuarama",
+    "list-group-item": "Birthday",
+    "birthday":"July 1st 2003",
+    "list-group-item-age": "Age"
     
 }
