@@ -17,6 +17,9 @@
     "birthday":"July 1st 2003",
     "list-group-item-age": "Age",
     "cidade": "City",
-    "estado": "State"
+    "estado": "State",
+    "list-group-item-universidade": "University",
+    "span-universidade": "Unipar - Umuarama - Information Systems"
+
     
 }
