@@ -48,15 +48,6 @@ html,body{
     text-decoration: none;
 }
 
-div.container.pb-4.pt-5 {
-    align-content: baseline;
-    float: inline-start;
-}
-
-div.container.pb-5 {
-    align-content: space-around;
-    float: left;
-}
 .row {
     display: flex;
     justify-content: flex-start;
