@@ -110,6 +110,10 @@ section#inicio span#subtitle {
     font-size: 1.5rem;
 }
 
+div.container.pb5 div.container.pb5-5.pt-5 div.container.mb5{
+    float: inline-start;
+}
+
 .text-shadow {
     text-shadow:4px 4px 10px #000000;
 }
