@@ -47,6 +47,20 @@ html,body{
     transition: 0.3s;
     text-decoration: none;
 }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    flex: 1 1 50%;
+    box-sizing: border-box;
+}
+@media (max-width: 2560px) {
+    .col-md-6 {
+        flex: 1 1 100%;
+    }
+}
 
 .nav-menu{
     padding: 1.5rem; 
