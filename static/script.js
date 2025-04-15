@@ -1,3 +1,5 @@
+import { translations } from "./translations.json";
+
 /*abre e fecha menu lateral no modo mobile*/
 
 const menuMobile = document.querySelector('.menu-mobile');
@@ -40,3 +42,12 @@ animeScroll();
 window.addEventListener("scroll", () => {
     animeScroll();
 })
+
+let currentLang = "PT"; //idioma padrão da pag.
+
+const switchLanguage = (lang) => {
+    currentLang = currentLang === "PT" ? "EN" : "PT"; //alterna entre os idiomas
+
+    //Atualiza o texto da página com as traduções correspondentes
+    document.getElementById("subtitle").innerHTML = translations[currentLang].subtitle;
+}
