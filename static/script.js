@@ -50,4 +50,5 @@ const switchLanguage = (lang) => {
 
     //Atualiza o texto da página com as traduções correspondentes
     document.getElementById("subtitle").innerHTML = translations[currentLang].subtitle;
+    document.getElementById("sobre").innerHTML = translations[currentLang].sobre;
 }
