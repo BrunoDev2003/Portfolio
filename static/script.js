@@ -1,4 +1,17 @@
-import { translations } from "./translations.json";
+async function loadTranslations() {
+    try {
+        const response = await fetch('/static/translations.json'); //carrega o arquivo JSON com as traduções
+        const translations = await response.json(); //converte o JSON em objeto JavaScript
+        return translations; //retorna o objeto de traduções
+    } catch (error) {
+        console.error('Erro ao carregar as traduções:', error); //exibe erro no console
+        return null; //retorna nulo em caso de erro
+    }
+    
+    }; //chama a função loadTranslations e aguarda o carregamento das traduções
+    loadTranslations().then(translations => {
+        console.log(translations); //exibe as traduções no console para verificar se carregou corretamente
+    });
 
 /*abre e fecha menu lateral no modo mobile*/
 
