@@ -50,7 +50,6 @@ async function loadTranslations() {
     try {
         const response = await fetch('/static/translations.json'); //carrega o arquivo JSON com as traduções
         translations = await response.json(); //converte o JSON em objeto JavaScript
-        return translations; //retorna o objeto de traduções
     } catch (error) {
         console.error('Erro ao carregar as traduções:', error); //exibe erro no console
     }
@@ -58,12 +57,16 @@ async function loadTranslations() {
     }; 
 
 async function switchLanguage() {
+    if (Object.keys(translations).length === 0) { //verifica se as traduções foram carregadas
+        console.error("as traduções não foram carregadas.")//carrega as traduções se não foram carregadas
+        return;
+    }
     currentLang = currentLang === "PT" ? "EN" : "PT"; //alterna entre os idiomas
     
-    if(!translations[currentLang]) { //verifica se as traduções já foram carregadas
+    /*if(!translations[currentLang]) { //verifica se as traduções já foram carregadas
         console.error('Traduções não carregadas.'); //exibe erro no console
         return; //retorna se não houver traduções
-    }
+    }*/
 
     const elementsToUpdate = [
         "lang-btn",
@@ -105,7 +108,7 @@ async function switchLanguage() {
         if (element) {
             element.innerHTML = translations[currentLang][id]; //atualiza o conteúdo do elemento com a tradução correspondente
         } else {
-            console.error(`Elemento com ID "${id}" não encontrado.`); //exibe erro no console se o elemento não for encontrado
+            console.warn(`Elemento com ID "${id}" não encontrado.`); //exibe erro no console se o elemento não for encontrado
         }
     });
     } 
@@ -113,8 +116,11 @@ async function switchLanguage() {
     //Inicializa troca de idiomas apenas após carregar as traduções
     async function init() {
         await loadTranslations(); //carrega as traduções
+        if (Object.keys(translations).length === 0) { //verifica se as traduções foram carregadas
+        console.error("as traduções não foram carregadas.")//carrega as traduções se não foram carregadas
+        return;
+        }
         document.getElementById("lang-btn").addEventListener("click", switchLanguage); //adiciona evento de clique ao botão de idioma
-        
     }
     init(); //chama a função de inicialização
 
