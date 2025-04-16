@@ -45,10 +45,43 @@ window.addEventListener("scroll", () => {
 
 let currentLang = "PT"; //idioma padrão da pag.
 
-const switchLanguage = (lang) => {
+const switchLanguage = () => {
     currentLang = currentLang === "PT" ? "EN" : "PT"; //alterna entre os idiomas
 
     //Atualiza o texto da página com as traduções correspondentes
+    document.getElementById("lang-btn").innerHTML = translations[currentLang]["lang-btn"];
     document.getElementById("subtitle").innerHTML = translations[currentLang].subtitle;
     document.getElementById("sobre").innerHTML = translations[currentLang].sobre;
+    document.getElementById("arraste").innerHTML = translations[currentLang].arraste;
+    document.getElementById("col-md-8_h3").innerHTML = translations[currentLang]["col-md-8_h3"];
+    document.getElementById("bacharel").innerHTML = translations[currentLang].bacharel;
+    document.getElementById("list-group-item").innerHTML = translations[currentLang]["list-group-item"];
+    document.getElementById("birthday").innerHTML = translations[currentLang]["birthday"];
+    document.getElementById("list-group-item-age").innerHTML = translations[currentLang]["list-group-item-age"];
+    document.getElementById("cidade").innerHTML = translations[currentLang].cidade;
+    document.getElementById("estado").innerHTML = translations[currentLang].estado;
+    document.getElementById("list-group-item-universidade").innerHTML = translations[currentLang]["list-group-item-universidade"];
+    document.getElementById("span-universidade").innerHTML = translations[currentLang]["span-universidade"];
+    document.getElementById("historico").innerHTML = translations[currentLang].historico;
+    document.getElementById("habilidades").innerHTML = translations[currentLang].habilidades;
+    document.getElementById("curriculo").innerHTML = translations[currentLang].curriculo;
+    document.getElementById("educacao").innerHTML = translations[currentLang].educacao;
+    document.getElementById("curso").innerHTML = translations[currentLang].curso;
+    document.getElementById("ano").innerHTML = translations[currentLang].ano;
+    document.getElementById("uni").innerHTML = translations[currentLang].uni;
+    document.getElementById("descricao-curso").innerHTML = translations[currentLang]["descricao-curso"];
+    document.getElementById("robotica").innerHTML = translations[currentLang].robotica;
+    document.getElementById("happycode").innerHTML = translations[currentLang].happycode;
+    document.getElementById("sobre-robotica").innerHTML = translations[currentLang]["sobre-robotica"];
+    document.getElementById("experiencia").innerHTML = translations[currentLang].experiencia;
+    document.getElementById("estagio").innerHTML = translations[currentLang].estagio;
+    document.getElementById("tempo").innerHTML = translations[currentLang].tempo;
+    document.getElementById("estagio_descr").innerHTML = translations[currentLang]["estagio-descr"];
+    document.getElementById("prof").innerHTML = translations[currentLang].prof;
+    document.getElementById("prof_descr").innerHTML = translations[currentLang]["prof-descr"];
+    document.getElementById("contato").innerHTML = translations[currentLang].contato;
+    document.getElementById("local").innerHTML = translations[currentLang].local;
 }
+
+const languageButton = document.getElementById("lang-btn"); //botão de idioma
+languageButton.addEventListener("click", switchLanguage); //adiciona evento de clique ao botão de idioma

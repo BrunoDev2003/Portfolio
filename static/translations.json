@@ -1,5 +1,6 @@
 {
     "PT": {
+        "lang-btn": "Trocar para inglês",
         "subtitle": "Desenvolvedor Java Spring, Bacharelado em Sistemas de Informação",
         "sobre": "Na Meta, contribuí significativamente para o desenvolvimento de produtos SAP, utilizando linguagem ABAP e aprimorando interfaces com o uso de Fiori Elements e S/4HANA. Minha abordagem ao desenvolvimento Restful com SAP RAP e manipulação de dados em XML e DDL, juntamente com a criação de relatórios ALV e CDS Views, reflete meu compromisso com a excelência e a inovação. Atualmente, estou focando em uma carreira como desenvolvedor fullstack Java, sou graduado a nível bacharelado em Sistemas de Informação na Unipar, o que tem aprimorado minha habilidade em programação orientada a objetos, e trabalhando como freelancer em projetos pessoais acabei aprimorando minhas habilidades em tecnologias web como Java Spring e React.JS, a busca constante por conhecimento e a proatividade em resolver problemas complexos são o motor que impulsiona minha carreira na área de TI, foco em desenvolver projetos fullstack e trabalhar no front e back de cada projeto para maximizar meu aprendizado em desenvolvimento de sistemas e segurança dos mesmos.",
         "arraste": "Arraste para ver mais",
@@ -34,6 +35,7 @@
     },
 
     "EN": {
+        "lang-btn": "Switch to Portuguese",
         "subtitle": "Java Spring Developer, Bachelor's Degree in Information Systems",
         "sobre": "At Meta, I made significant contributions to the development of SAP products, utilizing ABAP language and enhancing interfaces using Fiori Elements and S/4HANA. My approach to Restful development with SAP RAP and data manipulation in XML and DDL, along with the creation of ALV reports and CDS Views, reflects my commitment to excellence and innovation. Currently, I am focusing on a career as a fullstack Java developer, I have a bachelor's degree in Information Systems from Unipar, which has improved my object-oriented programming skills, and working as a freelancer on personal projects has enhanced my skills in web technologies such as Java Spring and React.JS. The constant pursuit of knowledge and proactivity in solving complex problems are the driving force behind my career in IT. I focus on developing fullstack projects and working on both the front and back end of each project to maximize my learning in system development and security.",
         "arraste": "Drag to see more",
@@ -53,6 +55,17 @@
         "curso": "Bachelor's Degree in Information Systems",
         "ano": "2021 - 2024",
         "uni": "Unipar - Universidade Paranaense",
-        "descricao-curso": "The bachelor's degree in Information Systems gave me concepts and a lot of learning and practice in development, maintenance, and administration of systems."
+        "descricao-curso": "The bachelor's degree in Information Systems gave me concepts and a lot of learning and practice in development, maintenance, and administration of systems.",
+        "robotica": "Robotics with Arduino",
+        "happycode": "Happy Code  - Umuarama",
+        "sobre-robotica": "My first official contact with programming was with Happy Code Umuarama, a programming school where we took the Robotics course with Arduino and developed several projects in practice with the C++ language.",
+        "experiencia": "Experiences",
+        "estagio": "Internship in SAP ABAP development.",
+        "tempo": "Jun - 2023 to Dec - 2023",
+        "estagio_descr": "At Meta, I made significant contributions to the development of SAP products, utilizing ABAP language and enhancing interfaces using Fiori Elements and S/4HANA. My approach to Restful development with SAP RAP and data manipulation in XML and DDL, along with the creation of ALV reports and CDS Views, reflects my commitment to excellence and innovation.",
+        "prof": "Basic Informatics Teacher",  
+        "prof_descr": "Association for the Assistance of the Deaf of Umuarama.",
+        "contato": "Contact",
+        "local": "Location"
     }
 }
