@@ -44,16 +44,15 @@ window.addEventListener("scroll", () => {
 })
 
 let currentLang = "PT"; //idioma padrão da pag.
-let translations ={}; //objeto para armazenar as traduções.
+let translations = {}; //objeto para armazenar as traduções.
 
 async function loadTranslations() {
     try {
         const response = await fetch('/static/translations.json'); //carrega o arquivo JSON com as traduções
-        const translations = await response.json(); //converte o JSON em objeto JavaScript
+        translations = await response.json(); //converte o JSON em objeto JavaScript
         return translations; //retorna o objeto de traduções
     } catch (error) {
         console.error('Erro ao carregar as traduções:', error); //exibe erro no console
-        return null; //retorna nulo em caso de erro
     }
     
     }; 
