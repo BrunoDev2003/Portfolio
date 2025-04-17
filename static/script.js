@@ -45,7 +45,14 @@ window.addEventListener("scroll", () => {
 
 let currentLang = "PT"; //idioma padrão da pag.
 let translations = {}; //objeto para armazenar as traduções.
-
+elementsToUpdate.forEach((id) => {
+    const element = document.getElementById(id); //seleciona o elemento pelo ID
+    if (element) {
+        element.innerHTML = id === "list-group-item" ? translations[currentLang][id] + ":" : translations[currentLang][id]; //atualiza o conteúdo do elemento com a tradução correspondente
+    } else {
+        console.warn(`Elemento com ID "${id}" não encontrado.`); //exibe erro no console se o elemento não for encontrado
+    }
+});
 async function loadTranslations() {
     try {
         const response = await fetch('/static/translations.json'); //carrega o arquivo JSON com as traduções
@@ -111,14 +118,7 @@ async function switchLanguage() {
         "contato",
         "local"
     ];
-    elementsToUpdate.forEach((id) => {
-        const element = document.getElementById(id); //seleciona o elemento pelo ID
-        if (element) {
-            element.innerHTML = id === "list-group-item" ? translations[currentLang][id] + ":" : translations[currentLang][id]; //atualiza o conteúdo do elemento com a tradução correspondente
-        } else {
-            console.warn(`Elemento com ID "${id}" não encontrado.`); //exibe erro no console se o elemento não for encontrado
-        }
-    });
+   
     } 
 
     //Inicializa troca de idiomas apenas após carregar as traduções
