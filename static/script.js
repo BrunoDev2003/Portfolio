@@ -69,10 +69,10 @@ async function switchLanguage() {
     }*/
 
     const elementsToUpdate = [
-        
         "lang-btn",
         "subtitle",
         "sobre",
+        "about-description",
         "arraste",
         "col-md-8_h3",
         "bacharel",
@@ -107,8 +107,6 @@ async function switchLanguage() {
         const element = document.getElementById(id); //seleciona o elemento pelo ID
         if (element) {
             element.innerHTML = id === "list-group-item" ? translations[currentLang][id] + ":" : translations[currentLang][id]; //atualiza o conteúdo do elemento com a tradução correspondente
-            document.getElementById("birthday").innerHTML = translations[currentLang]["birthday"];
-            element.innerHTML = translations[currentLang][id]; //atualiza o conteúdo do elemento com a tradução correspondente
         } else {
             console.warn(`Elemento com ID "${id}" não encontrado.`); //exibe erro no console se o elemento não for encontrado
         }
