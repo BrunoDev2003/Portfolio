@@ -53,19 +53,15 @@ const elementsToUpdate = [
     "col-md-8_h3",
     "bacharel",
     "list-group-item",
-    "birthday",
     "list-group-item-age",
     "cidade",   
     "estado",
     "list-group-item-universidade",
-    "span-universidade",
     "historico",
     "habilidades",
     "curriculo",
     "educacao",
     "curso",
-    "ano",
-    "uni",
     "descricao-curso",
     "robotica",
     "happycode",
@@ -76,8 +72,6 @@ const elementsToUpdate = [
     "estagio-descr",
     "prof",
     "prof-descr",
-    "contato",
-    "local"
 ];
 
 async function loadTranslations() {
