@@ -57,7 +57,7 @@ async function loadTranslations() {
     }; 
 
 async function switchLanguage() {
-    if (Object.keys(translations).length === 0) { //verifica se as traduções foram carregadas
+    if (!translations[currentLang]) { //verifica se as traduções foram carregadas
         console.error("as traduções não foram carregadas.")//carrega as traduções se não foram carregadas
         return;
     }
@@ -68,6 +68,14 @@ async function switchLanguage() {
         return; //retorna se não houver traduções
     }*/
 
+        document.querySelectorAll("[data-translate]").forEach(element => {
+            const key = element.getAttribute("data-translate");
+            if (translations[currentLang][key]) {
+                element.innerHTML = translations[currentLang][key]; 
+            } else {
+                console.warn(`Tradução para '${key}' não encontrada.`);
+            }
+        });
     const elementsToUpdate = [
         "lang-btn",
         "subtitle",
@@ -115,22 +123,17 @@ async function switchLanguage() {
 
     //Inicializa troca de idiomas apenas após carregar as traduções
 
-    document.addEventListener("DOMContentLoaded", () => {
-        async function init() {
+    document.addEventListener("DOMContentLoaded", async () => {
             await loadTranslations(); //carrega as traduções
-            if (Object.keys(translations).length === 0) { //verifica se as traduções foram carregadas
-            console.error("as traduções não foram carregadas.")//carrega as traduções se não foram carregadas
-            return;
-            }
+            
             if (!translations.PT || !translations.EN) {
                 console.error("Traduções não encontradas."); //exibe erro no console se as traduções não forem encontradas
                 return;
             }
             document.getElementById("lang-btn").addEventListener("click", switchLanguage); //adiciona evento de clique ao botão de idioma
-        }
-        init(); //chama a função de inicialização
+        } //chama a função de inicialização
 
-    });
+    );
 
 /*
         //Atualiza o texto da página com as traduções correspondentes
