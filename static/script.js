@@ -79,14 +79,6 @@ const elementsToUpdate = [
     "contato",
     "local"
 ];
-elementsToUpdate.forEach((id) => {
-    const element = document.getElementById(id); //seleciona o elemento pelo ID
-    if (element) {
-        element.innerHTML = id === "list-group-item" ? translations[currentLang][id] + ":" : translations[currentLang][id]; //atualiza o conteúdo do elemento com a tradução correspondente
-    } else {
-        console.warn(`Elemento com ID "${id}" não encontrado.`); //exibe erro no console se o elemento não for encontrado
-    }
-});
 
 async function loadTranslations() {
     try {
@@ -99,7 +91,7 @@ async function loadTranslations() {
     }; 
 
 async function switchLanguage() {
-    if (!translations[currentLang]) { //verifica se as traduções foram carregadas
+    if (Object.keys(translations).length === 0) { //verifica se as traduções foram carregadas
         console.error("as traduções não foram carregadas.")//carrega as traduções se não foram carregadas
         return;
     }
@@ -118,12 +110,21 @@ async function switchLanguage() {
                 console.warn(`Tradução para '${key}' não encontrada.`);
             }
         });
+
+        elementsToUpdate.forEach((id) => {
+            const element = document.getElementById(id); //seleciona o elemento pelo ID
+            if (element) {
+                element.innerHTML = id === "list-group-item" ? translations[currentLang][id] + ":" : translations[currentLang][id]; //atualiza o conteúdo do elemento com a tradução correspondente
+            } else {
+                console.warn(`Elemento com ID "${id}" não encontrado.`); //exibe erro no console se o elemento não for encontrado
+            }
+        });
 }
 
     //Inicializa troca de idiomas apenas após carregar as traduções
 
     document.addEventListener("DOMContentLoaded", async () => {
-            await loadTranslations(); //carrega as traduções
+            await loadTranslations() //carrega as traduções
 
             if (!translations.PT || !translations.EN) {
                 console.error("Traduções não encontradas."); //exibe erro no console se as traduções não forem encontradas
