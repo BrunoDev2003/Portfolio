@@ -125,11 +125,11 @@ async function switchLanguage() {
 
     document.addEventListener("DOMContentLoaded", async () => {
             await loadTranslations(); //carrega as traduções
-            
+
             if (!translations.PT || !translations.EN) {
                 console.error("Traduções não encontradas."); //exibe erro no console se as traduções não forem encontradas
                 return;
-            }
+            } 
             document.getElementById("lang-btn").addEventListener("click", switchLanguage); //adiciona evento de clique ao botão de idioma
         } //chama a função de inicialização
 
