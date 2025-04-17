@@ -1,5 +1,3 @@
-
-
 /*abre e fecha menu lateral no modo mobile*/
 
 const menuMobile = document.querySelector('.menu-mobile');
@@ -45,6 +43,42 @@ window.addEventListener("scroll", () => {
 
 let currentLang = "PT"; //idioma padrão da pag.
 let translations = {}; //objeto para armazenar as traduções.
+
+const elementsToUpdate = [
+    "lang-btn",
+    "subtitle",
+    "sobre",
+    "about-description",
+    "arraste",
+    "col-md-8_h3",
+    "bacharel",
+    "list-group-item",
+    "birthday",
+    "list-group-item-age",
+    "cidade",   
+    "estado",
+    "list-group-item-universidade",
+    "span-universidade",
+    "historico",
+    "habilidades",
+    "curriculo",
+    "educacao",
+    "curso",
+    "ano",
+    "uni",
+    "descricao-curso",
+    "robotica",
+    "happycode",
+    "sobre-robotica",
+    "experiencia",
+    "estagio",
+    "tempo",
+    "estagio-descr",
+    "prof",
+    "prof-descr",
+    "contato",
+    "local"
+];
 elementsToUpdate.forEach((id) => {
     const element = document.getElementById(id); //seleciona o elemento pelo ID
     if (element) {
@@ -53,6 +87,7 @@ elementsToUpdate.forEach((id) => {
         console.warn(`Elemento com ID "${id}" não encontrado.`); //exibe erro no console se o elemento não for encontrado
     }
 });
+
 async function loadTranslations() {
     try {
         const response = await fetch('/static/translations.json'); //carrega o arquivo JSON com as traduções
@@ -83,43 +118,7 @@ async function switchLanguage() {
                 console.warn(`Tradução para '${key}' não encontrada.`);
             }
         });
-    const elementsToUpdate = [
-        "lang-btn",
-        "subtitle",
-        "sobre",
-        "about-description",
-        "arraste",
-        "col-md-8_h3",
-        "bacharel",
-        "list-group-item",
-        "birthday",
-        "list-group-item-age",
-        "cidade",   
-        "estado",
-        "list-group-item-universidade",
-        "span-universidade",
-        "historico",
-        "habilidades",
-        "curriculo",
-        "educacao",
-        "curso",
-        "ano",
-        "uni",
-        "descricao-curso",
-        "robotica",
-        "happycode",
-        "sobre-robotica",
-        "experiencia",
-        "estagio",
-        "tempo",
-        "estagio-descr",
-        "prof",
-        "prof-descr",
-        "contato",
-        "local"
-    ];
-   
-    } 
+}
 
     //Inicializa troca de idiomas apenas após carregar as traduções
 
