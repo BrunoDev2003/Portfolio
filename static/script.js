@@ -96,39 +96,23 @@ async function switchLanguage() {
         return; //retorna se não houver traduções
     }*/
 
-        if (currentLang === "EN") { //se o idioma atual for inglês
-            document.getElementById("lang-btn").innerHTML = translations[currentLang]["lang-btn"]; //atualiza o botão de idioma
-            document.querySelectorAll("[data-translate]").forEach(element => { //seleciona todos os elementos com o atributo data-translate
-                const key = element.getAttribute("data-translate"); //pega o valor do atributo data-translate
-                if (translations.EN[key]) { //verifica se a tradução existe
-                    element.innerHTML = translations.EN[key]; //atualiza o conteúdo do elemento com a tradução correspondente
-                } else {
-                    console.warn(`Tradução não encontrada para "${key}".`); //exibe erro no console se a tradução não for encontrada
-                }
+        document.querySelectorAll("[data-translate]").forEach(element => {
+            const key = element.getAttribute("data-translate");
+            if (translations[currentLang][key]) {
+                element.innerHTML = translations[currentLang][key]; 
+            } else {
+                console.warn(`Tradução para '${key}' não encontrada.`);
+            }
         });
 
         elementsToUpdate.forEach((id) => {
             const element = document.getElementById(id); //seleciona o elemento pelo ID
             if (element) {
-                element.innerHTML = translations.EN[id]; //atualiza o conteúdo do elemento com a tradução correspondente
+                element.innerHTML = id === "list-group-item" ? translations[currentLang][id] + ":" : translations[currentLang][id]; //atualiza o conteúdo do elemento com a tradução correspondente
             } else {
                 console.warn(`Elemento com ID "${id}" não encontrado.`); //exibe erro no console se o elemento não for encontrado
             }
         });
-    } else { //se o idioma atual for português
-        document.querySelectorAll("[data-translate]").forEach(element => { //seleciona todos os elementos com o atributo data-translate
-            element.innerHTML = element.getAttribute("data-original"); //atualiza o conteúdo do elemento com a tradução correspondente
-
-        });
-
-        elementsToUpdate.forEach((id) => {
-            const element = document.getElementById(id); //seleciona o elemento pelo ID
-            if (element) {
-                element.innerHTML = element.getAttribute("data-original"); //atualiza o conteúdo do elemento com a tradução correspondente
-            }
-        });
-
-    }
 }
 
     //Inicializa troca de idiomas apenas após carregar as traduções
@@ -136,7 +120,7 @@ async function switchLanguage() {
     document.addEventListener("DOMContentLoaded", async () => {
             await loadTranslations() //carrega as traduções
 
-            if (!translations.EN) {
+            if (!translations.PT || !translations.EN) {
                 console.error("Traduções não encontradas."); //exibe erro no console se as traduções não forem encontradas
                 return;
             } 
