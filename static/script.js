@@ -88,7 +88,7 @@ async function loadTranslations() {
         console.error('Erro ao carregar as traduções:', error); //exibe erro no console
     }
     
-    }; 
+    };  
 
 async function switchLanguage() {
     if (Object.keys(translations).length === 0) { //verifica se as traduções foram carregadas
