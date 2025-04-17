@@ -116,15 +116,23 @@ async function switchLanguage() {
     } 
 
     //Inicializa troca de idiomas apenas após carregar as traduções
-    async function init() {
-        await loadTranslations(); //carrega as traduções
-        if (Object.keys(translations).length === 0) { //verifica se as traduções foram carregadas
-        console.error("as traduções não foram carregadas.")//carrega as traduções se não foram carregadas
-        return;
+
+    document.addEventListener("DOMContentLoaded", () => {
+        async function init() {
+            await loadTranslations(); //carrega as traduções
+            if (Object.keys(translations).length === 0) { //verifica se as traduções foram carregadas
+            console.error("as traduções não foram carregadas.")//carrega as traduções se não foram carregadas
+            return;
+            }
+            if (!translations.PT || !translations.EN) {
+                console.error("Traduções não encontradas."); //exibe erro no console se as traduções não forem encontradas
+                return;
+            }
+            document.getElementById("lang-btn").addEventListener("click", switchLanguage); //adiciona evento de clique ao botão de idioma
         }
-        document.getElementById("lang-btn").addEventListener("click", switchLanguage); //adiciona evento de clique ao botão de idioma
-    }
-    init(); //chama a função de inicialização
+        init(); //chama a função de inicialização
+
+    });
 
 /*
         //Atualiza o texto da página com as traduções correspondentes
